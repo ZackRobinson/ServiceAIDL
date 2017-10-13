@@ -12,32 +12,25 @@ import java.util.Random;
 
 public class MyBoundService extends Service {
     private static final String TAG = "MyBoundServiceTag";
-    IBinder iBinder = new MyBinder(); //Interface binder
-    List<String> dummyData = new ArrayList<>();
 
-
-    public MyBoundService() {
-    }
-
-    public class MyBinder extends Binder {
-        public MyBoundService getService() {
-            return MyBoundService.this;
-        }
-    }
 
     @Override
     public void onCreate() {
         super.onCreate();
-
         Log.d(TAG, "onCreate: ");
-
     }
 
     @Override
     public IBinder onBind(Intent intent) {
         Log.d(TAG, "onBind: " + intent.getStringExtra("data"));
-        return iBinder;
+        return mBinder;
     }
+
+    private final IRemoteService.Stub mBinder = new IRemoteService.Stub() {
+        public int calculate(int a, int b) {
+            return a+b;
+        }
+    };
 
     @Override
     public boolean onUnbind(Intent intent) {
@@ -52,19 +45,6 @@ public class MyBoundService extends Service {
         Log.d(TAG, "onDestroy: ");
     }
 
-    public void initData(int initializeStr) {
 
-        //creating random numbers of list of size initializeStr
-
-        for (int i = 0; i < initializeStr; i++) {
-            dummyData.add(String.valueOf(new Random().nextInt(100)));
-        }
-
-    }
-
-    public List<String> getDummyData() {
-
-        return dummyData;
-    }
 
 }

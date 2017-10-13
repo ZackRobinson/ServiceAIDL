@@ -13,16 +13,8 @@
         android:onClick="startService"
         android:text="Bind to service" />
 
-
     <Button
-        android:id="@+id/btnInitDataForService"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="startService"
-        android:text="Init data for service" />
-
-    <Button
-        android:id="@+id/btnGetDataFromService"
+        android:id="@+id/btnCalculate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="startService"
