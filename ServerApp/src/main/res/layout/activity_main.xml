@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zackeryrobinson.boundserviceswithaidl.MainActivity">
+
+    <Button
+        android:id="@+id/btnBindToService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="startService"
+        android:text="Bind to service" />
+
+
+    <Button
+        android:id="@+id/btnInitDataForService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="startService"
+        android:text="Init data for service" />
+
+    <Button
+        android:id="@+id/btnGetDataFromService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="startService"
+        android:text="Get data from service" />
+
+    <Button
+        android:id="@+id/btnUnbindFromService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="startService"
+        android:text="Unbind from service" />
+
+</LinearLayout>
